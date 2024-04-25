@@ -1,3 +1,3 @@
 @Library('buildAndPushDockerImage') _
 
-buildAndPushDockerImage('demo.repo', '5957-7218-0799', 'us-east-1')
+buildAndPushDockerImage('jenkins_user', '595772180799', 'us-east-1')
