@@ -20,7 +20,7 @@ def call(String imageName, String awsAccountId, String awsRegion) {
             stage('Build Docker Image') {
                 steps {
                     script {
-                        docker.build("${imageName}")
+                        docker build -t ("${imageName}")
                     }
                 }
             }
