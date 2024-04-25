@@ -1,3 +1,3 @@
 @Library('buildAndPushDockerImage') _
 
-buildAndPushDockerImage('angular-app', '891376912626', 'us-east-1')
+buildAndPushDockerImage('demo.repo', '5957-7218-0799', 'us-east-1')
