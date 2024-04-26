@@ -36,7 +36,7 @@ def call(String imageName, String awsAccountId, String awsRegion) {
                 steps {
                     script {
                         bat "docker pull ${awsAccountId}.dkr.ecr.${awsRegion}.amazonaws.com/${imageName}:latest"
-                        bat "docker run -d -p 4200:4200 ${awsAccountId}.dkr.ecr.${awsRegion}.amazonaws.com/${imageName}:latest"
+                        bat "docker run -d -p 4200:4220 ${awsAccountId}.dkr.ecr.${awsRegion}.amazonaws.com/${imageName}:latest"
                         bat 'docker ps'
                         bat 'docker ps -a'
                     }
