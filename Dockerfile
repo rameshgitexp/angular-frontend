@@ -19,7 +19,7 @@ RUN npm install
 COPY . .
 
 # Expose port
-EXPOSE 4220
+EXPOSE 4200
 
 # Command to run the application
 CMD ["ng", "serve", "--host", "0.0.0.0"]
