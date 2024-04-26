@@ -27,7 +27,7 @@ def call(String imageName, String awsAccountId, String awsRegion) {
                 steps {
                     script {
                        docker.withRegistry("https://${awsAccountId}.dkr.ecr.${awsRegion}.amazonaws.com/${imageName}") {
-                            docker.image("${imageName}").push('ramesh')
+                            docker.image("${imageName}").push('latust_build')
                         }
                     }
                 }
@@ -35,8 +35,8 @@ def call(String imageName, String awsAccountId, String awsRegion) {
             stage('Pull and Run docker image') {
                 steps {
                     script {
-                        bat "docker pull ${awsAccountId}.dkr.ecr.${awsRegion}.amazonaws.com/${imageName}:ramesh"
-                        bat "docker run -d -p 4000:4200 ${awsAccountId}.dkr.ecr.${awsRegion}.amazonaws.com/${imageName}:ramesh"
+                        bat "docker pull ${awsAccountId}.dkr.ecr.${awsRegion}.amazonaws.com/${imageName}:latust_build"
+                        bat "docker run -d -p 4000:4200 ${awsAccountId}.dkr.ecr.${awsRegion}.amazonaws.com/${imageName}:latust_build"
                         bat 'docker ps'
                         bat 'docker ps -a'
                     }
