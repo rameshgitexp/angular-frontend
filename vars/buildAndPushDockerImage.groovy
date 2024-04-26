@@ -27,8 +27,8 @@ def call(String imageName, String awsAccountId, String awsRegion) {
             stage('Push Docker Image to AWS ECR') {
                 steps {
                     script {
-                        docker.withRegistry("https://${awsAccountId}.dkr.ecr.${awsRegion}.amazonaws.com/${imageName}") {
-                            docker.image("${imageName}").push('latest')
+                       bat "docker.withRegistry("https://${awsAccountId}.dkr.ecr.${awsRegion}.amazonaws.com/${imageName}") {
+                            docker.image("${imageName}").push('latest')"
                         }
                     }
                 }
