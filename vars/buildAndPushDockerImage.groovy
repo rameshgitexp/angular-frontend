@@ -35,8 +35,8 @@ def call(String imageName, String awsAccountId, String awsRegion) {
             stage('Pull and Run docker image') {
                 steps {
                     script {
-                        bat "docker pull ${awsAccountId}.dkr.ecr.${awsRegion}.amazonaws.com/${imageName}:latest"
-                        bat "docker run -d -p 4200:4220 ${awsAccountId}.dkr.ecr.${awsRegion}.amazonaws.com/${imageName}:latest"
+                        bat "docker pull ${awsAccountId}.dkr.ecr.${awsRegion}.amazonaws.com/${imageName}:ramesh"
+                        bat "docker run -d -p 4200:4220 ${awsAccountId}.dkr.ecr.${awsRegion}.amazonaws.com/${imageName}:ramesh"
                         bat 'docker ps'
                         bat 'docker ps -a'
                     }
