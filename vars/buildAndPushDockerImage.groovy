@@ -27,7 +27,7 @@ def call(String imageName, String awsAccountId, String awsRegion) {
                 steps {
                     script {
                        docker.withRegistry("https://${awsAccountId}.dkr.ecr.${awsRegion}.amazonaws.com/${imageName}") {
-                            docker.image("${imageName}").push('latest')
+                            docker.image("${imageName}").push('ramesh:1.0')
                         }
                     }
                 }
